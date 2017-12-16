@@ -1,0 +1,27 @@
+{
+  "name": "coinmonhubpool",
+  "version": "1.0.0",
+  "description": "Calcul balance of Miningpoolhub to USD and EUR",
+  "main": "./bin/index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "build": "npx babel src --out-dir bin"
+  },
+  "bin": {
+    "coinmonhubpool": "./bin/index.js"
+  },
+  "author": "Mickaël VILLERS <mickael.villers@epitech.eu",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "latest",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cli-table2": "^0.2.0",
+    "commander": "latest",
+    "ora": "^1.3.0",
+    "colors": "latest"
+  }
+}
