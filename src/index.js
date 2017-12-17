@@ -4,11 +4,12 @@ import program from 'commander';
 import ora from 'ora';
 import colors from 'colors';
 
+import {version} from '../package';
 import Api from './services/api';
 import { drawTable, drawTotal } from './manager/table';
 
 program
-    .version('0.0.1')
+    .version(version)
     .option('-k, --key <apiKey>', 'Set a valid API Key')
     .parse(process.argv);
 
