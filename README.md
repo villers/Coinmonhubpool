@@ -1,6 +1,6 @@
 # Coinmonhubpool
 
-Calcul balance of Miningpoolhub to USD and EUR
+Get all currency's balances from miningpoolhub to USD, EUR
 
 ## Installation
 
@@ -40,9 +40,13 @@ Total:
 
 ```sh
 coinmonhubpool -h
-Options:
 
-    -V, --version        output the version number
-    -k, --key [api key]  Convert to your fiat currency (default: c65ea5f0dc5b3b66cecc437714c8ac07a362b142eea18b6a3bcef1657efa4e0f)
-    -h, --help           output usage information
+  Usage: coinmonhubpool [options]
+
+
+  Options:
+
+    -V, --version       output the version number
+    -k, --key <apiKey>  Set a valid API Key
+    -h, --help          output usage information
 ```

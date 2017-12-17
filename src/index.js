@@ -9,7 +9,7 @@ import { drawTable, drawTotal } from './manager/table';
 
 program
     .version('0.0.1')
-    .option('-k, --key <apiKey>', 'Convert to your fiat currency')
+    .option('-k, --key <apiKey>', 'Set a valid API Key')
     .parse(process.argv);
 
 if (typeof program.key === 'undefined') {

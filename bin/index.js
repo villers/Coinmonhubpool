@@ -21,7 +21,7 @@ var _table = require('./manager/table');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_commander2.default.version('0.0.1').option('-k, --key <apiKey>', 'Convert to your fiat currency').parse(process.argv);
+_commander2.default.version('0.0.1').option('-k, --key <apiKey>', 'Set a valid API Key').parse(process.argv);
 
 if (typeof _commander2.default.key === 'undefined') {
     console.error('Error: program required argument -k <apiKey>'.red);
