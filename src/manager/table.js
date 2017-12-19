@@ -5,7 +5,7 @@ export function drawTable(lines) {
     const table = new Table({
         chars,
         head: ['Coin', 'Confirmed', 'Unconfirmed', 'Ae_confirmed', 'Ae_unconfirmed', 'Exchange', 'USD', 'EURO'].map(text => text.yellow),
-        colWidths: [15, 10, 10, 10, 10, 10, 15, 15]
+        colWidths: [10, 20, 20, 20, 20, 20, 15, 15],
     });
 
     table.push(...lines);
@@ -36,4 +36,18 @@ export function drawTotal(lines) {
     console.log(`Total:`);
     console.log(table.toString());
     return lines;
+}
+
+export function drawPool(poolName, data) {
+    const table = new Table({
+        chars,
+        head: ['USD', 'EUR'].map(title => title.yellow),
+        colWidths: [20, 20],
+    });
+
+    table.push(data);
+
+    console.log(`Total from ${poolName}:`);
+    console.log(table.toString());
+    return data;
 }
