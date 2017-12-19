@@ -1,7 +1,7 @@
 {
   "name": "coinmonhubpool",
-  "version": "0.0.2",
-  "description": "Calcul balance of Miningpoolhub to USD and EUR",
+  "version": "0.0.3",
+  "description": "Get all currency's balances from miningpoolhub, zPool and Hashrefinery to USD, EUR",
   "main": "./bin/index.js",
   "scripts": {
     "start": "babel-node src/index.js",

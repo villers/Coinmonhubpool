@@ -34,21 +34,31 @@ class Api {
     }
 
     static async getDataZpool(wallet) {
+        const tmp = [];
         const datas = await Api.loadZpool(wallet);
         if (datas.currency) {
-            return ({ USD, EUR } = await Api.getCurrency(datas.unpaid, datas.currency));
+            const { USD, EUR } = await Api.getCurrency(datas.unpaid, datas.currency, false);
+
+            tmp.push(datas.unpaid * USD);
+            tmp.push(datas.unpaid * EUR);
+            return tmp;
         }
 
-        return null;
+        return tmp;
     }
 
     static async getDataHashrefinery(wallet) {
+        const tmp = [];
         const datas = await Api.loadHashrefinery(wallet);
         if (datas.currency) {
-            return ({ USD, EUR } = await Api.getCurrency(datas.unpaid, datas.currency));
+            const { USD, EUR } = await Api.getCurrency(datas.unpaid, datas.currency, false);
+
+            tmp.push(datas.unpaid * USD);
+            tmp.push(datas.unpaid * EUR);
+            return tmp;
         }
 
-        return null;
+        return tmp;
     }
 
     static async loadMiningPool(apikey) {

@@ -51,16 +51,16 @@ function drawTotal(lines) {
     return lines;
 }
 
-function drawPool(poolName, totals) {
+function drawPool(poolName, data) {
     const table = new _cliTable2.default({
         chars: _chars2.default,
         head: ['USD', 'EUR'].map(title => title.yellow),
         colWidths: [20, 20]
     });
 
-    table.push(Object.values(totals));
+    table.push(data);
 
     console.log(`Total from ${poolName}:`);
     console.log(table.toString());
-    return totals;
+    return data;
 }
