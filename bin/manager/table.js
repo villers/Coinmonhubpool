@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.drawTable = drawTable;
 exports.drawTotal = drawTotal;
+exports.drawPool = drawPool;
 
 var _cliTable = require('cli-table2');
 
@@ -20,7 +21,7 @@ function drawTable(lines) {
     const table = new _cliTable2.default({
         chars: _chars2.default,
         head: ['Coin', 'Confirmed', 'Unconfirmed', 'Ae_confirmed', 'Ae_unconfirmed', 'Exchange', 'USD', 'EURO'].map(text => text.yellow),
-        colWidths: [15, 10, 10, 10, 10, 10, 15, 15]
+        colWidths: [10, 20, 20, 20, 20, 20, 15, 15]
     });
 
     table.push(...lines);
@@ -48,4 +49,18 @@ function drawTotal(lines) {
     console.log(`Total:`);
     console.log(table.toString());
     return lines;
+}
+
+function drawPool(poolName, totals) {
+    const table = new _cliTable2.default({
+        chars: _chars2.default,
+        head: ['USD', 'EUR'].map(title => title.yellow),
+        colWidths: [20, 20]
+    });
+
+    table.push(Object.values(totals));
+
+    console.log(`Total from ${poolName}:`);
+    console.log(table.toString());
+    return totals;
 }
