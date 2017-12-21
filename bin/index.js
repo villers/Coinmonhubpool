@@ -27,7 +27,7 @@ var _table = require('./manager/table');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_commander2.default.version(_package.version).option('-k, --key <apiKey>', 'API Key of miningpoolhub').option('-w, --wallet <wallet>', 'Your BTC wallet').option('-t, --time <timeinseconds>').parse(process.argv);
+_commander2.default.version(_package.version).option('-k, --key <apiKey>', 'API Key of miningpoolhub').option('-w, --wallet <wallet>', 'Your BTC wallet').option('-t, --time <timeinseconds>', 'Refresh balance data in seconds').parse(process.argv);
 
 async function main(argv) {
   do {
