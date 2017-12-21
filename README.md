@@ -52,8 +52,9 @@ coinmonhubpool -h
 
   Options:
 
-    -V, --version          output the version number
-    -k, --key <apiKey>     API Key of miningpoolhub
-    -w, --wallet <wallet>  Your BTC wallet
-    -h, --help             output usage information
+    -V, --version               output the version number
+    -k, --key <apiKey>          API Key of miningpoolhub
+    -w, --wallet <wallet>       Your BTC wallet
+    -t, --time <timeinseconds>  
+    -h, --help                  output usage information
 ```

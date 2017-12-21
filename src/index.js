@@ -13,7 +13,7 @@ program
   .version(version)
   .option('-k, --key <apiKey>', 'API Key of miningpoolhub')
   .option('-w, --wallet <wallet>', 'Your BTC wallet')
-  .option('-t, --time <timeinseconds>')
+  .option('-t, --time <timeinseconds>', 'Refresh balance data in seconds')
   .parse(process.argv);
 
 async function main(argv) {
