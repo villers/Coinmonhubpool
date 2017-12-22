@@ -1,6 +1,6 @@
 {
   "name": "coinmonhubpool",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Get all currency's balances from miningpoolhub, zPool and Hashrefinery to USD, EUR",
   "main": "./bin/index.js",
   "scripts": {
