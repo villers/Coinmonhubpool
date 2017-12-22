@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 import program from 'commander';
-import ora from 'ora';
+
+// eslint-disable-next-line no-unused-vars
 import colors from 'colors';
 
 import { version } from '../package.json';
-import Api from './services/api';
+import { getMiningPoolHub, getYiiMiningPools } from './services/api';
 import sleep from './utils/sleep';
-import { drawPool, drawTable, drawTotal } from './manager/table';
 
 program
   .version(version)
@@ -21,39 +21,13 @@ async function main(argv) {
     // clear stdout
     console.log('\x1Bc');
     if (typeof argv.key !== 'undefined') {
-      const miningPoolHubSpiner = ora('Loading data from miningPoolHub').start();
-      await Api.getDataMiningPool(argv.key)
-        .then(v => drawTable(v))
-        .then(v => drawTotal(v))
-        .then(() => miningPoolHubSpiner.stop())
-        .catch((err) => {
-          miningPoolHubSpiner.stop();
-          if (err.response.status === 401) {
-            console.error('Error: The API Key is not valid'.red);
-          } else {
-            console.error('Error: A error is occured'.red);
-          }
-        });
+      await getMiningPoolHub(argv.key, 'MininPpoolHub');
     }
 
     if (typeof argv.wallet !== 'undefined') {
-      const zPoolSpiner = ora('Loading data from zPool').start();
-      await Api.getDataZpool(argv.wallet)
-        .then(v => drawPool('zPool', v))
-        .then(() => zPoolSpiner.stop())
-        .catch(() => {
-          zPoolSpiner.stop();
-          console.error('Error: A error is occured'.red);
-        });
-
-      const HashrefinerySpiner = ora('Loading data from Hashrefinery').start();
-      await Api.getDataHashrefinery(argv.wallet)
-        .then(v => drawPool('Hashrefinery', v))
-        .then(() => HashrefinerySpiner.stop())
-        .catch(() => {
-          HashrefinerySpiner.stop();
-          console.error('Error: A error is occured'.red);
-        });
+      await getYiiMiningPools(argv.wallet, 'zPool');
+      await getYiiMiningPools(argv.wallet, 'Hashrefinery');
+      await getYiiMiningPools(argv.wallet, 'Ahashpool');
     }
 
     if (typeof argv.time !== 'undefined') {
