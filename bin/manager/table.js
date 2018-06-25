@@ -9,7 +9,7 @@ exports.drawPool = drawPool;
 
 var _cliTable = require('cli-table3');
 
-var _cliTable3 = _interopRequireDefault(_cliTable);
+var _cliTable2 = _interopRequireDefault(_cliTable);
 
 var _chars = require('../constant/chars');
 
@@ -18,7 +18,7 @@ var _chars2 = _interopRequireDefault(_chars);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function drawTable(lines) {
-  const table = new _cliTable3.default({
+  const table = new _cliTable2.default({
     chars: _chars2.default,
     head: ['Coin', 'Confirmed', 'Unconfirmed', 'Ae_confirmed', 'Ae_unconfirmed', 'Exchange', 'USD', 'EURO'].map(text => text.yellow),
     colWidths: [20, 15, 15, 15, 15, 15, 15, 15]
@@ -31,7 +31,7 @@ function drawTable(lines) {
 }
 
 function drawTotal(lines) {
-  const table = new _cliTable3.default({
+  const table = new _cliTable2.default({
     chars: _chars2.default,
     head: ['USD', 'EUR'].map(title => title.yellow),
     colWidths: [20, 20]
@@ -55,7 +55,7 @@ function drawTotal(lines) {
 }
 
 function drawPool(poolName, lines) {
-  const table = new _cliTable3.default({
+  const table = new _cliTable2.default({
     chars: _chars2.default,
     head: ['USD', 'EUR'].map(title => title.yellow),
     colWidths: [20, 20]
